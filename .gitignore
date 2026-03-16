@@ -2,7 +2,16 @@ node_modules/
 build/
 dist/
 coverage/
+
+# Editor/OS files
 .DS_Store
 *.log
+.eslintcache
+temp/
+.tmp/
+.idea/
+.vscode/
+
+# Env files
 .env*
 !.env.example
