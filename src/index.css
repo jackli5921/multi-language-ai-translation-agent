@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@keyframes fall {
+  0% {
+    transform: translate3d(var(--start-x), -10vh, 0) rotate(0deg) scale(var(--scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(var(--end-x), 110vh, 0) rotate(var(--rotation)) scale(var(--scale));
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  animation: fall linear infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  transition: background 1s ease, border-radius 1s ease, clip-path 1s ease;
+}
+
+.shape-petal {
+  border-radius: 150% 0 150% 0;
+  clip-path: none;
+}
+
+.shape-circle {
+  border-radius: 50%;
+  clip-path: none;
+}
+
+.shape-leaf {
+  border-radius: 0 100% 0 100%;
+  clip-path: none;
+}
+
+.shape-star {
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}

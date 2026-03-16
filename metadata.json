@@ -1,0 +1,7 @@
+{
+  "name": "多國語言AI翻譯助手",
+  "description": "Upload or record Japanese audio to get a transcript, Traditional Chinese translation, and an AI summary.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
