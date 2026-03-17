@@ -3,7 +3,9 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { Mic, Square, Upload, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+// Initialize AI, handling potential missing API keys gracefully (especially for GitHub Pages without secrets)
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
+const ai = new GoogleGenAI({ apiKey });
 
 type ProcessStatus = 'idle' | 'recording' | 'processing' | 'success' | 'error';
 
